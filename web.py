@@ -1,37 +1,13 @@
-# EX01 Developing a Simple Webserver
-
-# Date:06-12-2024
-# AIM:
-To develop a simple webserver to serve html pages and display the configuration details of laptop.
-
-# DESIGN STEPS:
-## Step 1:
-HTML content creation.
-
-## Step 2:
-Design of webserver workflow.
-
-## Step 3:
-Implementation using Python code.
-
-## Step 4:
-Serving the HTML pages.
-
-## Step 5:
-Testing the webserver.
-
-# PROGRAM:
 from http.server import HTTPServer, BaseHTTPRequestHandler
 content = """
-
-      <!doctype html>
-     <html>
-     <head>
-     <title> Web Server</title>
-     </head>
-     <body style="background-color: rgba(200, 162, 115, 0.756);">
-      <h1><center>My Laptop Configuration Details</center></h1>
-    <table border="1" cellpadding="10" align="center" style="font-style: inherit;font-family: fantasy;color: rgb(10, 46, 46);background-color: azure;">
+<!doctype html>
+<html>
+<head>
+<title> Web Server</title>
+</head>
+<body style="background-color: rgba(200, 162, 115, 0.756);">
+<h1><center>My Laptop Configuration Details</center></h1>
+   <table border="1" cellpadding="10" align="center" style="font-style: inherit;font-family: fantasy;color: rgb(10, 46, 46);background-color: azure;">
         <tr style="font-family: sans-serif;">
             <th bgcolor="blue">Specification</th>
             <th bgcolor="gray"">Details</th>
@@ -69,8 +45,8 @@ content = """
             <td>64-bit operating system, x64-based processor</td>
         </tr>
     </table>
-     </body>
-    </html>
+</body>
+</html>
 """
 class myhandler(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -83,12 +59,3 @@ server_address = ('',8000)
 httpd = HTTPServer(server_address,myhandler)
 print("my webserver is running...")
 httpd.serve_forever()
-
-
-# OUTPUT:
-![alt text](<Screenshot 2024-12-06 170610.png>)
-
-![alt text](<Screenshot 2024-12-06 170644.png>)
-
-# RESULT:
-The program for implementing simple webserver is executed successfully.
